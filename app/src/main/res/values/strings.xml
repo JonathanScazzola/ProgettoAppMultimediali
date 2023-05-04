@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">IoFit</string>
+    <string name="strStartExercise">Inizia Esercizi</string>
+    <string name="strChooseExercise">Scegli un Esercizio</string>
+    <string name="strBench">Panca Piana</string>
+    <string name="strSquat">Squat</string>
+    <string name="strDeadlift">Stacco da Terra</string>
+
 </resources>

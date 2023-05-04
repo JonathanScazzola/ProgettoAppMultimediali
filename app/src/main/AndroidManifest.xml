@@ -13,6 +13,12 @@
         android:theme="@style/Theme.IoFit"
         tools:targetApi="31">
         <activity
+            android:name=".activities.GraphicExercise"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ExerciseSelector"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
