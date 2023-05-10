@@ -18,6 +18,7 @@
         />
 
     <Button
+        android:id="@+id/BtnBench"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/strBench"
@@ -27,6 +28,7 @@
         />
 
     <Button
+        android:id="@+id/BtnSquat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/strSquat"
@@ -36,6 +38,7 @@
         />
 
     <Button
+        android:id="@+id/BtnDeadlift"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/strDeadlift"
