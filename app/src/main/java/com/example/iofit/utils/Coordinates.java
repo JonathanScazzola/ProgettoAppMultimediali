@@ -15,15 +15,15 @@ public class Coordinates {
         return coordinates;
     }
 
-    public float X() {
+    public float getX() {
         return coordinates[0];
     }
 
-    public float Y() {
+    public float getY() {
         return coordinates[1];
     }
 
-    public float Z() {
+    public float getZ() {
         return coordinates[2];
     }
 }

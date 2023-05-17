@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.iofit.MainActivity;
 import com.example.iofit.R;
 
 public class ExerciseSelector extends AppCompatActivity {
@@ -27,7 +26,7 @@ public class ExerciseSelector extends AppCompatActivity {
         btnBench.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ExerciseSelector.this, GraphicExercise.class);
+                Intent intent = new Intent(ExerciseSelector.this, ExercisePage.class);
 
                 // Per ora lo schianto qui ma penso che poi si debba trovare un modo più carino per passare il nome dell'esercizio
                 intent.putExtra(getString(R.string.LABEL_EXERCISE_NAME), "Bench");
@@ -38,7 +37,7 @@ public class ExerciseSelector extends AppCompatActivity {
         btnSquat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ExerciseSelector.this, GraphicExercise.class);
+                Intent intent = new Intent(ExerciseSelector.this, ExercisePage.class);
 
                 // Per ora lo schianto qui ma penso che poi si debba trovare un modo più carino per passare il nome dell'esercizio
                 intent.putExtra(getString(R.string.LABEL_EXERCISE_NAME), "Squat");
@@ -49,7 +48,7 @@ public class ExerciseSelector extends AppCompatActivity {
         btnDeadlift.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ExerciseSelector.this, GraphicExercise.class);
+                Intent intent = new Intent(ExerciseSelector.this, ExercisePage.class);
 
                 // Per ora lo schianto qui ma penso che poi si debba trovare un modo più carino per passare il nome dell'esercizio
                 intent.putExtra(getString(R.string.LABEL_EXERCISE_NAME), "Deadlift");

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.IoFit"
         tools:targetApi="31">
         <activity
-            android:name=".activities.GraphicExercise"
+            android:name=".activities.ExercisePage"
             android:exported="false" />
         <activity
             android:name=".activities.ExerciseSelector"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.GraphicExercise"
+    tools:context=".activities.ExercisePage"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     >
@@ -20,6 +20,7 @@
         />
 
     <TextView
+        android:id="@+id/TvX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="X"
@@ -27,6 +28,7 @@
         />
 
     <TextView
+        android:id="@+id/TvY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Y"
@@ -34,6 +36,7 @@
         />
 
     <TextView
+        android:id="@+id/TvZ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Z"
