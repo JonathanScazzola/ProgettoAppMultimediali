@@ -8,6 +8,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 import com.example.iofit.R;
 import com.example.iofit.utils.CoordinatesList;
 
-public class ExercisePage extends AppCompatActivity implements SensorEventListener{
+public class ExercisePage extends AppCompatActivity implements SensorEventListener {
     private final String TAG = "ExercisePage";
     private TextView tvSelectedExercise = null, tvX = null, tvY = null, tvZ = null;
     private Button btnStartExercise = null;
@@ -26,6 +27,8 @@ public class ExercisePage extends AppCompatActivity implements SensorEventListen
     private Sensor accelerometer = null;
     private SensorEventListener sensorEventListener = null;
     private CoordinatesList coordinatesList = null;
+
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +47,12 @@ public class ExercisePage extends AppCompatActivity implements SensorEventListen
 
         coordinatesList = new CoordinatesList();
 
+        mediaPlayer = MediaPlayer.create(this, R.raw.saund);
+
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensorEventListener = this;
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        if(accelerometer == null) {
+        if (accelerometer == null) {
             Log.i(TAG, "Accelerometer not available");
             // TODO lanciare eccezioni o robe così
             return;
@@ -69,8 +74,9 @@ public class ExercisePage extends AppCompatActivity implements SensorEventListen
                         tvX.setText("0");
                         tvY.setText("0");
                         tvZ.setText("0");
+
                     }
-                }, 3000);
+                }, 3000); //3000
             }
         });
 
@@ -80,9 +86,21 @@ public class ExercisePage extends AppCompatActivity implements SensorEventListen
     public void onSensorChanged(SensorEvent event) {
         coordinatesList.add(event.values);
         Log.i(TAG, "Coordinate: " + (coordinatesList.getLast().getX() + " " + coordinatesList.getLast().getY() + " " + coordinatesList.getLast().getZ()));
-        tvX.setText(Float.toString(coordinatesList.getLast().getX()));
-        tvY.setText(Float.toString(coordinatesList.getLast().getY()));
-        tvZ.setText(Float.toString(coordinatesList.getLast().getZ()));
+        tvX.setText("X: " + Float.toString(coordinatesList.getLast().getX()));
+
+        float X = coordinatesList.getLast().getX();
+
+
+
+        if (X > 2 || X < -2) { // T
+
+            mediaPlayer = MediaPlayer.create(this, R.raw.saund);
+
+            mediaPlayer.start();
+        }
+
+        tvY.setText("Y: " + Float.toString(coordinatesList.getLast().getY()));
+        tvZ.setText("Z: " + Float.toString(coordinatesList.getLast().getZ()));
     }
 
     @Override

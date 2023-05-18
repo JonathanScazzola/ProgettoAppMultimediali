@@ -14,6 +14,7 @@ public class ExerciseSelector extends AppCompatActivity {
     private Button btnBench = null;
     private Button btnSquat = null;
     private Button btnDeadlift = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
