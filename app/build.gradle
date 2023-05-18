@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.example.iofit'
-    compileSdk 33
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.iofit"
         minSdk 24
-        targetSdk 33
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -27,6 +27,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+
+
+
 
 dependencies {
 
