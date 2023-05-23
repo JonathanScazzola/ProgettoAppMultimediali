@@ -16,10 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 import com.example.iofit.R;
 import com.example.iofit.utils.CoordinatesList;
 
+import java.util.LinkedList;
+
 public class ExercisePage extends AppCompatActivity implements SensorEventListener {
+
     private final String TAG = "ExercisePage";
     private TextView tvSelectedExercise = null, tvX = null, tvY = null, tvZ = null;
     private Button btnStartExercise = null;
@@ -76,31 +80,16 @@ public class ExercisePage extends AppCompatActivity implements SensorEventListen
                         tvZ.setText("0");
 
                     }
-                }, 3000); //3000
+                }, 300000); //3000
             }
         });
-
     }
 
-    @Override
+
     public void onSensorChanged(SensorEvent event) {
-        coordinatesList.add(event.values);
-        Log.i(TAG, "Coordinate: " + (coordinatesList.getLast().getX() + " " + coordinatesList.getLast().getY() + " " + coordinatesList.getLast().getZ()));
-        tvX.setText("X: " + Float.toString(coordinatesList.getLast().getX()));
-
-        float X = coordinatesList.getLast().getX();
-
-
-
-        if (X > 2 || X < -2) { // T
-
-            mediaPlayer = MediaPlayer.create(this, R.raw.saund);
-
-            mediaPlayer.start();
-        }
-
-        tvY.setText("Y: " + Float.toString(coordinatesList.getLast().getY()));
-        tvZ.setText("Z: " + Float.toString(coordinatesList.getLast().getZ()));
+        tvX.setText("");
+        tvX.setText("");
+        tvX.setText("");
     }
 
     @Override

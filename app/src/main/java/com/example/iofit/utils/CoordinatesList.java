@@ -1,7 +1,6 @@
 package com.example.iofit.utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CoordinatesList {
     private float x, y, z;
