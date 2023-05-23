@@ -18,7 +18,7 @@ public class CoordinatesList {
 
     public void add(float[] c) {
         // TODO se abbiamo tempo fare controlli tipo return true se andato bene ecc...
-        Coordinates coord = new Coordinates(c[0], c[1], c[2]);
+        Coordinates coord = new Coordinates(c);
         this.coordinatesList.add(coord);
         return;
     }
@@ -26,9 +26,14 @@ public class CoordinatesList {
     public Coordinates get(int index) {
         return coordinatesList.get(index);
     }
-
+    public ArrayList<Coordinates> getAll() {
+        return coordinatesList;
+    }
     public Coordinates getFirst() {
         return coordinatesList.get(0);
+    }
+    public int getSize() {
+        return coordinatesList.size();
     }
 
     public Coordinates getLast() {
